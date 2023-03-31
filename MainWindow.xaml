@@ -1,0 +1,20 @@
+﻿<Window x:Class="PZ10_4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PZ10_4"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <ListBox x:Name="taskList" HorizontalAlignment="Left" Height="354" Margin="10,55,0,0" VerticalAlignment="Top" Width="158" MouseDoubleClick="taskList_MouseDoubleClick"/>
+        <TextBox x:Name="enterTaskText" HorizontalAlignment="Left" Height="23" Margin="469,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" />
+        <Button x:Name="enterTaskButton" Content="Добавить" HorizontalAlignment="Left" Margin="660,55,0,0" VerticalAlignment="Top" Width="75" Click="enterTaskButton_Click"/>
+        <Button x:Name="deleteTaskButton" Content="Удалить" HorizontalAlignment="Left" Margin="660,99,0,0" VerticalAlignment="Top" Width="74" Click="deleteTaskButton_Click"/>
+        <ListBox x:Name="finTaskList" HorizontalAlignment="Left" Height="354" Margin="228,55,0,0" VerticalAlignment="Top" Width="191"/>
+        <Label Content="Текущие задачи" HorizontalAlignment="Left" Margin="46,18,0,0" VerticalAlignment="Top"/>
+        <Label Content="Выполненные задачи" HorizontalAlignment="Left" Margin="252,18,0,0" VerticalAlignment="Top"/>
+        <Label Content="Введите задачу" HorizontalAlignment="Left" Margin="494,43,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
