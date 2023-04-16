@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PZ10_4"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
-        <ListBox x:Name="taskList" HorizontalAlignment="Left" Height="354" Margin="10,55,0,0" VerticalAlignment="Top" Width="158" MouseDoubleClick="taskList_MouseDoubleClick"/>
-        <TextBox x:Name="enterTaskText" HorizontalAlignment="Left" Height="23" Margin="469,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" />
-        <Button x:Name="enterTaskButton" Content="Добавить" HorizontalAlignment="Left" Margin="660,55,0,0" VerticalAlignment="Top" Width="75" Click="enterTaskButton_Click"/>
-        <Button x:Name="deleteTaskButton" Content="Удалить" HorizontalAlignment="Left" Margin="660,99,0,0" VerticalAlignment="Top" Width="74" Click="deleteTaskButton_Click"/>
-        <ListBox x:Name="finTaskList" HorizontalAlignment="Left" Height="354" Margin="228,55,0,0" VerticalAlignment="Top" Width="191"/>
+        <ListBox x:Name="TaskList" HorizontalAlignment="Left" Height="354" Margin="10,55,0,0" VerticalAlignment="Top" Width="158" MouseDoubleClick="Task_DC" SelectionMode="Extended"/>
+        <TextBox x:Name="new_task" HorizontalAlignment="Left" Height="23" Margin="469,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" />
+        <Button x:Name="enterTaskButton" Content="Добавить" HorizontalAlignment="Left" Margin="660,55,0,0" VerticalAlignment="Top" Width="75" Click="Add_task"/>
+        <Button x:Name="deleteTaskButton" Content="Удалить" HorizontalAlignment="Left" Margin="660,99,0,0" VerticalAlignment="Top" Width="74" Click="delete_task"/>
+        <ListBox x:Name="CompleteTasksList" HorizontalAlignment="Left" Height="354" Margin="228,55,0,0" VerticalAlignment="Top" Width="191" SelectionMode="Extended"/>
         <Label Content="Текущие задачи" HorizontalAlignment="Left" Margin="46,18,0,0" VerticalAlignment="Top"/>
         <Label Content="Выполненные задачи" HorizontalAlignment="Left" Margin="252,18,0,0" VerticalAlignment="Top"/>
         <Label Content="Введите задачу" HorizontalAlignment="Left" Margin="494,43,0,0" VerticalAlignment="Top"/>

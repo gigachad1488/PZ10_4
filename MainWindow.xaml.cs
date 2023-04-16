@@ -23,45 +23,33 @@ namespace PZ10_4
   
     {   
         ObservableCollection<string> tasks;
-        ObservableCollection<string> fintasks;
+        ObservableCollection<string> complete_tasks;
         public MainWindow()
         {
             InitializeComponent();
-            fintasks = new ObservableCollection<string>();
-            finTaskList.ItemsSource = fintasks;
-            tasks = new ObservableCollection<string> { "Сделать домашнее задание", "Купить цветы маме", "Придумать идею для приложения" };
-            taskList.ItemsSource = tasks;
-        }
+            complete_tasks = new ObservableCollection<string>();
+            CompleteTasksList.ItemsSource = complete_tasks;
+            tasks = new ObservableCollection<string> { };
+            TaskList.ItemsSource = tasks;
+        } 
 
-        
-        private void enterTaskButton_Click(object sender, RoutedEventArgs e)
+        private void Add_task(object sender, RoutedEventArgs e)
         {
-            string addtask = enterTaskText.Text;
-            tasks.Add(addtask);
-            enterTaskText.Clear();
-           
+            string nt = new_task.Text;
+            tasks.Add(nt);
+            new_task.Clear();
         }
 
-        private void deleteTaskButton_Click(object sender, RoutedEventArgs e)
+        private void delete_task(object sender, RoutedEventArgs e)
         {
-            if(finTaskList.SelectedIndex!=-1)
-            {
-                fintasks.RemoveAt(finTaskList.SelectedIndex);
-
-            }
-            
+            complete_tasks.RemoveAt(CompleteTasksList.SelectedIndex);
         }
 
-        private void taskList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void Task_DC(object sender, MouseButtonEventArgs e)
         {
-            string promejutochnaya = taskList.SelectedItem.ToString();
-            tasks.RemoveAt(taskList.SelectedIndex);
-            fintasks.Add(promejutochnaya);
-
+            string task = TaskList.SelectedItem.ToString();
+            tasks.RemoveAt(TaskList.SelectedIndex);
+            complete_tasks.Add(task);
         }
-
-      
-        
-        
     }
 }
