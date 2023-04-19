@@ -21,7 +21,7 @@ namespace PZ10_4
     /// </summary>
     public partial class MainWindow : Window
   
-    {   
+    {    
         ObservableCollection<string> tasks;
         ObservableCollection<string> complete_tasks;
         public MainWindow()
