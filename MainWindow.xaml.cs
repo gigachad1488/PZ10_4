@@ -33,23 +33,63 @@ namespace PZ10_4
             TaskList.ItemsSource = tasks;
         } 
 
-        private void Add_task(object sender, RoutedEventArgs e)
-        {
-            string nt = new_task.Text;
-            tasks.Add(nt);
-            new_task.Clear();
-        }
-
         private void delete_task(object sender, RoutedEventArgs e)
         {
-            complete_tasks.RemoveAt(CompleteTasksList.SelectedIndex);
+            DeleteTask();
         }
 
-        private void Task_DC(object sender, MouseButtonEventArgs e)
+        private void TaskList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             string task = TaskList.SelectedItem.ToString();
             tasks.RemoveAt(TaskList.SelectedIndex);
             complete_tasks.Add(task);
+        }
+
+        public void DeleteTask()
+        {
+            complete_tasks.RemoveAt(CompleteTasksList.SelectedIndex);
+        }
+
+        private void CompleteTasksList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            DeleteTask();
+        }
+
+        private void newtaskTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                AddTask();
+            }
+        }
+
+        public void AddTask()
+        {
+            tasks.Add(newtaskTextBox.Text);
+            newtaskTextBox.Clear();
+        }
+
+        private void AddTaskButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddTask();
+        }
+
+        private void DelTask(object sender, KeyEventArgs e)
+        {           
+            if (e.Key == Key.Delete)
+            {
+                ListBox list = sender as ListBox;
+                if (list.Name == "TaskList")
+                {
+                    string task = list.SelectedItem.ToString();
+                    tasks.RemoveAt(TaskList.SelectedIndex);
+                    complete_tasks.Add(task);
+                }
+                else
+                {
+                    complete_tasks.RemoveAt(CompleteTasksList.SelectedIndex);
+                }
+            }
         }
     }
 }

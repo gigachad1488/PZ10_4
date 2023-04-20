@@ -7,14 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="619" ResizeMode="NoResize">
     <Grid>
-        <ListBox x:Name="TaskList" HorizontalAlignment="Left" Height="354" Margin="160,55,0,0" VerticalAlignment="Top" Width="158" MouseDoubleClick="Task_DC" SelectionMode="Extended"/>
-        <TextBox x:Name="new_task" HorizontalAlignment="Left" Height="23" Margin="17,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" />
-        <Button x:Name="enterTaskButton" Content="Добавить" HorizontalAlignment="Left" Margin="48,148,0,0" VerticalAlignment="Top" Width="76" Click="Add_task"/>
+        <ListBox x:Name="TaskList" HorizontalAlignment="Left" Height="354" Margin="160,55,0,0" VerticalAlignment="Top" Width="158" MouseDoubleClick="TaskList_MouseDoubleClick" SelectionMode="Extended" KeyUp="DelTask"/>
+        <TextBox x:Name="newtaskTextBox" HorizontalAlignment="Left" Height="23" Margin="17,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" KeyUp="newtaskTextBox_KeyUp" />
+        <Button x:Name="AddTaskButton" Content="Добавить" HorizontalAlignment="Left" Margin="48,148,0,0" VerticalAlignment="Top" Width="76" Click="AddTaskButton_Click"/>
         <Button x:Name="deleteTaskButton" Content="Удалить" HorizontalAlignment="Left" Margin="530,82,0,0" VerticalAlignment="Top" Width="74" Click="delete_task" Height="150"/>
-        <ListBox x:Name="CompleteTasksList" HorizontalAlignment="Left" Height="354" Margin="334,55,0,0" VerticalAlignment="Top" Width="191" SelectionMode="Extended"/>
-        <Label Content="Текущие задачи" HorizontalAlignment="Left" Margin="190,21,0,0" VerticalAlignment="Top"/>
-        <Label Content="Выполненные задачи" HorizontalAlignment="Left" Margin="365,13,0,0" VerticalAlignment="Top"/>
-        <Label Content="Введите задачу" HorizontalAlignment="Left" Margin="35,69,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+        <ListBox x:Name="CompleteTasksList" HorizontalAlignment="Left" Height="354" Margin="334,55,0,0" VerticalAlignment="Top" Width="191" SelectionMode="Extended" MouseDoubleClick="CompleteTasksList_MouseDoubleClick" KeyUp="DelTask"/>
+        <Label Content="текущие" HorizontalAlignment="Left" Margin="211,21,0,0" VerticalAlignment="Top"/>
+        <Label Content="выполненые" HorizontalAlignment="Left" Margin="389,24,0,0" VerticalAlignment="Top"/>
+        <Label Content="задача" HorizontalAlignment="Left" Margin="35,69,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
